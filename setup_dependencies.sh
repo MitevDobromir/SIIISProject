@@ -8,7 +8,7 @@
 set -e
 
 echo "========================================="
-echo "📦 Installing Dependencies"
+echo " Installing Dependencies"
 echo "========================================="
 echo ""
 
@@ -222,7 +222,7 @@ configure_docker_permissions() {
             sudo usermod -aG docker $USER
             print_success "User added to docker group"
             print_info ""
-            print_info "⚠️  IMPORTANT: Run 'newgrp docker' or logout/login for changes to take effect"
+            print_info "IMPORTANT: Run 'newgrp docker' or logout/login for changes to take effect"
             print_info ""
         fi
     fi
@@ -325,7 +325,7 @@ main() {
     print_info "Next steps:"
     echo "  1. Run: newgrp docker  (or logout/login)"
     echo "  2. Run: ./setup_docker.sh"
-    echo "  3. Run: ./run_docker.sh"
+    echo "  3. Run: ./app.sh start"
     echo ""
 }
 
