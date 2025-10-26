@@ -58,14 +58,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database - PostgreSQL Configuration
+# Uses environment variables for flexibility (Docker + Native setup)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'todo_db',
-        'USER': 'todo_user',
-        'PASSWORD': 'todo_password',
-        'HOST': 'db',
-        'PORT': '5432',
+        'NAME': os.getenv('DATABASE_NAME', 'todo_db'),
+        'USER': os.getenv('DATABASE_USER', 'todo_user'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD', 'todo_password'),
+        'HOST': os.getenv('DATABASE_HOST', 'localhost'),
+        'PORT': os.getenv('DATABASE_PORT', '5432'),
     }
 }
 
